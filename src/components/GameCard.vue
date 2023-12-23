@@ -1,8 +1,16 @@
 <script setup lang="ts">
   import { ref } from 'vue';
 
+  // Multiplier is a number between 0 and 3. Zero means bomb
+  defineProps({
+    multiplier: {
+      type: Number,
+      validator: (value: number) => {
+        return value <= 3 && value >= 0;
+      }
+    }
+  })
   const isFlipped = ref(false);
-  const number = ref(0);
   function flipCard() {
     if (!isFlipped.value) {
       isFlipped.value = true;
@@ -31,7 +39,7 @@
       </div>
       <div v-else class="absolute h-full w-full border-solid border-4 border-gray-400 bg-red-400">
         <div class="flex justify-center items-center border-solid border-2 border-black h-full w-full">
-          <span class="text-black">{{ number }}</span>
+          <span class="text-black">{{ multiplier }}</span>
         </div>
       </div>
     </Transition>
