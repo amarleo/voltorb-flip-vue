@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useScoreStore = defineStore('score', () => {
@@ -17,5 +17,13 @@ export const useScoreStore = defineStore('score', () => {
     currentScore.value = 0;
   }
 
-  return { currentScore, incrementCurrentScore, resetCurrentScore }
+  const incrementGlobalScore = () => {
+    globalScore.value += currentScore.value;
+  }
+
+  const resetGlobalScore = () => {
+    globalScore.value = 0;
+  }
+
+  return { currentScore, incrementCurrentScore, resetCurrentScore, incrementGlobalScore, resetGlobalScore }
 })

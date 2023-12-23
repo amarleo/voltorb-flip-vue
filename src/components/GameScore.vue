@@ -1,5 +1,8 @@
 <script setup lang="ts">
+
 import { useScoreStore } from '@/stores/score';
+import ModalWindow from './utils/ModalWindow.vue';
+
 
 const score = useScoreStore()
 </script>
@@ -7,5 +10,6 @@ const score = useScoreStore()
 <template>
   <div>
     <span>Current Score: {{ score.currentScore }}</span>
+    <ModalWindow />
   </div>
 </template>

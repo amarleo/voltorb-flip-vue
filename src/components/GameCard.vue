@@ -19,6 +19,9 @@
     if (!isFlipped.value) {
       score.incrementCurrentScore(props.multiplier)
       isFlipped.value = true;
+      if (props.multiplier === 0) {
+        //
+      }
     }
   }
 </script>

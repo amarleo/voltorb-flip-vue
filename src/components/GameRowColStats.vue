@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import type { PropType } from 'vue';
 
-const props = defineProps({
+defineProps({
   totalPoints: Number,
   totalBombs: Number,
 });
