@@ -1,10 +1,14 @@
 <script setup lang="ts">
   import { ref } from 'vue';
+  import { useScoreStore } from '@/stores/score';
+
+  const score = useScoreStore()
 
   // Multiplier is a number between 0 and 3. Zero means bomb
-  defineProps({
+  const props = defineProps({
     multiplier: {
       type: Number,
+      required: true,
       validator: (value: number) => {
         return value <= 3 && value >= 0;
       }
@@ -13,6 +17,7 @@
   const isFlipped = ref(false);
   function flipCard() {
     if (!isFlipped.value) {
+      score.incrementCurrentScore(props.multiplier)
       isFlipped.value = true;
     }
   }
