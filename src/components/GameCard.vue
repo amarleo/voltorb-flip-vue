@@ -19,7 +19,7 @@
 </script>
 
 <template>
-  <div class="relative w-16 h-16">
+  <div class="relative w-14 h-14">
     <Transition name="flip-card">
       <div v-if="!isFlipped" class="absolute h-full w-full border-solid border-4 border-gray-400">
         <div 
