@@ -3,7 +3,7 @@ import GameBoard from '@/components/GameBoard.vue';
 </script>
 
 <template>
-  <main>
+  <main class="bg-board-tealGreen h-screen flex justify-center items-center">
     <GameBoard />
   </main>
 </template>
