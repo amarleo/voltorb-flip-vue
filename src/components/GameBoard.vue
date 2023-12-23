@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import GameCard from './GameCard.vue';
-import GameRowStats from './GameRowStats.vue';
-import GameColStats from './GameColStats.vue';
 import { matrix } from '@/assets/matrix';
 import GameRowColStats from './GameRowColStats.vue';
 
