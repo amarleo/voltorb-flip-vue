@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import GameCard from './GameCard.vue';
 </script>
 
 <template>
-  <div class="bg-slate-600">
-    <p class="text-2xl font-roboto">hey</p>
+  <div class="bg-board-tealGreen h-96 w-96 grid p-2">
+    <GameCard />
   </div>
 </template>
 
