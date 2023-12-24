@@ -1,8 +1,10 @@
 <script setup lang="ts">
   import { ref } from 'vue';
   import { useScoreStore } from '@/stores/score';
+import { useGameStatusStore } from '@/stores/gameStatus';
 
   const score = useScoreStore()
+  const gameStatus = useGameStatusStore()
 
   // Multiplier is a number between 0 and 3. Zero means bomb
   const props = defineProps({
@@ -20,7 +22,7 @@
       score.incrementCurrentScore(props.multiplier)
       isFlipped.value = true;
       if (props.multiplier === 0) {
-        //
+        gameStatus.setGameOver();
       }
     }
   }

@@ -29,7 +29,6 @@ const getColTotalPoints = (colIndex: number): number => {
   return points;
 }
 
-
 </script>
 
 <template>
@@ -41,9 +40,6 @@ const getColTotalPoints = (colIndex: number): number => {
       </div>
       <GameRowColStats :totalPoints="getRowTotalPoints(rowIndex)" :totalBombs="getRowTotalBombs(rowIndex)"/>
     </div>
-
-
-
   </div>
 </template>
 
