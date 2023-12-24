@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import GameCard from './GameCard.vue';
-import { matrix } from '@/assets/matrix';
 import GameRowColStats from './GameRowColStats.vue';
+import { useGameStatusStore } from '@/stores/gameStatus';
+
+const gameStatus = useGameStatusStore();
+
+gameStatus.setNewBoard();
+
+const matrix = gameStatus.gameBoard.board;
 
 const getRowTotalBombs = (rowIndex: number): number => {
   return matrix[rowIndex].reduce((count, value) => (value === 0 ? count + 1 : count), 0)

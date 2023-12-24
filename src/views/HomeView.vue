@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import GameBoard from '@/components/GameBoard.vue';
-import GameScore from '@/components/GameScore.vue'
+import GameScore from '@/components/GameScore.vue';
+import { useGameStatusStore } from '@/stores/gameStatus';
+
+const gameStatus = useGameStatusStore();
+
+
 </script>
 
 <template>
